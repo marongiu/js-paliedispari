@@ -5,6 +5,7 @@
 
 // Creo la variabile pariodispari e la scelta del numero
 
+
 var pariDispari = prompt("Scegli tra pari o dispari:");
 var numero = parseInt(prompt("Scegli un numero tra 1 e 5:"));
 if (numero % 2 == 0) {
@@ -23,22 +24,39 @@ if (isNaN(numero)) {
 // Stampo il numero scelto
 document.getElementById('number').innerHTML = "Il numero da te scelto è: " + numero;
 
-computer();
+var avversario = computer();
+// Stampo la scelta dell'avversario
+if (avversario % 2 == 0) {
+  document.getElementById('enemy-choice').innerHTML = "La scelta dell'avversario è pari";
+} else {
+  document.getElementById('enemy-choice').innerHTML = "La scelta dell'avversario è dispari";
+}
+
+// Stampo la somma dei due risultati
+var totale = somma();
+
+// Dichiaro il vincitore di conseguenza
+
+if (totale % 2 == 0) {
+  document.getElementById('vincitore').innerHTML = "Ha vinto la scelta pari";
+} else {
+  document.getElementById('vincitore').innerHTML = "Ha vinto la scelta dispari";
+}
+
+
+
+// Funzioni
+
 // Usando una funzione genero un numero per l'avversario
 // Il numero generato casualmente deve andare tra 1 e 5
 function computer() {
   var pcNumero = Math.floor(Math.random() * 5 + 1);
   document.getElementById('enemy-number').innerHTML = "Il numero scelto dall'avversario è: " + pcNumero;
-  if (pcNumero % 2 == 0) {
-    document.getElementById('enemy-choice').innerHTML = "La scelta dell'avversario è pari";
-  } else {
-    document.getElementById('enemy-choice').innerHTML = "La scelta dell'avversario è dispari";
-  }
+  return pcNumero;
+}
 
-  var risultato = numero + pcNumero;
-  if (risultato % 2 == 0) {
-    document.getElementById('vincitore').innerHTML = "Ha vinto la scelta pari";
-  } else {
-    document.getElementById('vincitore').innerHTML = "Ha vinto la scelta dispari";
-  }
+// Creo una funzione Somma
+function somma() {
+  var risultato = numero + avversario;
+  return risultato;
 }
