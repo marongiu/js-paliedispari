@@ -19,7 +19,9 @@ if (isNaN(numero)) {
   location.reload(alert("Non hai inserito correttamente i dati"));
 } else if (!isNaN(pariDispari)) {
   location.reload(alert("Non hai inserito correttamente i dati"));
-} else if (numero > 5 || numero < 1) {
+} else if (numero > 5) {
+  location.reload(alert("Non hai inserito correttamente i dati"));
+} else if (numero < 1) {
   location.reload(alert("Non hai inserito correttamente i dati"));
 }
 
