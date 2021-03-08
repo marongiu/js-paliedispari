@@ -6,27 +6,39 @@
 // Creo la variabile pariodispari e la scelta del numero
 
 var pariDispari = prompt("Scegli tra pari o dispari:");
-console.log("La tua scelta:", pariDispari);
 var numero = parseInt(prompt("Scegli un numero tra 1 e 5:"));
-console.log("Il tuo numero", numero);
+if (numero % 2 == 0) {
+  document.getElementById('choice').innerHTML = "La tua scelta è pari";
+} else {
+  document.getElementById('choice').innerHTML = "La tua scelta è dispari";
+}
+
 
 // Creo un if per essere sicuri che l'utente ci dia un numero e una parola
 if (isNaN(numero)) {
   console.log("Devi scegliere un numero");
 } else if (!isNaN(pariDispari))
-  console.log("Devi scegliere tra pari e dispari");
+console.log("Devi scegliere tra pari e dispari");
 
+// Stampo il numero scelto
+document.getElementById('number').innerHTML = "Il numero da te scelto è: " + numero;
 
 computer();
 // Usando una funzione genero un numero per l'avversario
-
+// Il numero generato casualmente deve andare tra 1 e 5
 function computer() {
-  // Il numero generato casualmente deve andare tra 1 e 5
-  var pcNumero =  Math.floor(Math.random() * 5 + 1);
-  console.log("Il numero dell'avversario", pcNumero);
-  if (pcNumero % 2) {
-    console.log("La scelta dell'avversario è: pari");
+  var pcNumero = Math.floor(Math.random() * 5 + 1);
+  document.getElementById('enemy-number').innerHTML = "Il numero scelto dall'avversario è: " + pcNumero;
+  if (pcNumero % 2 == 0) {
+    document.getElementById('enemy-choice').innerHTML = "La scelta dell'avversario è pari";
   } else {
-    console.log("La scelta dell'avversario è: dispari");
+    document.getElementById('enemy-choice').innerHTML = "La scelta dell'avversario è dispari";
+  }
+
+  var risultato = numero + pcNumero;
+  if (risultato % 2 == 0) {
+    document.getElementById('vincitore').innerHTML = "Ha vinto la scelta pari";
+  } else {
+    document.getElementById('vincitore').innerHTML = "Ha vinto la scelta dispari";
   }
 }
