@@ -7,14 +7,22 @@
 
 
 var pariDispari = prompt("Scegli tra pari o dispari:");
+
+// Imposto la scrittura in minuscolo
+pariDispari = pariDispari.toLowerCase();
+
+console.log(pariDispari);
+
 var numero = parseInt(prompt("Scegli un numero tra 1 e 5:"));
+
+// Stampo la scelta dell'utente
 if (numero % 2 == 0) {
   document.getElementById('choice').innerHTML = "La tua scelta è pari";
 } else {
   document.getElementById('choice').innerHTML = "La tua scelta è dispari";
 }
 
-// Creo un if per essere sicuri che l'utente ci dia un numero e una parola e un numero tra 1 e 5
+// Condizioni da rispettare
 if (isNaN(numero)) {
   location.reload(alert("Non hai inserito correttamente i dati"));
 } else if (!isNaN(pariDispari)) {
@@ -48,7 +56,6 @@ if (totale % 2 == 0) {
 } else {
   document.getElementById('vincitore').innerHTML = "Ha vinto la scelta dispari";
 }
-
 
 
 // Funzioni
