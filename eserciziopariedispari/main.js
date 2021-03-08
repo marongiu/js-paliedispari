@@ -23,6 +23,8 @@ if (isNaN(numero)) {
   location.reload(alert("Non hai inserito correttamente i dati"));
 } else if (numero < 1) {
   location.reload(alert("Non hai inserito correttamente i dati"));
+} else if (pariDispari != "pari" && pariDispari != "dispari") {
+  location.reload(alert("Non hai inserito correttamente i dati"));
 }
 
 // Stampo il numero scelto
