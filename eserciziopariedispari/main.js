@@ -16,9 +16,9 @@ if (numero % 2 == 0) {
 
 // Creo un if per essere sicuri che l'utente ci dia un numero e una parola
 if (isNaN(numero)) {
-  console.log("Devi scegliere un numero");
+    location.reload(alert("Non hai inserito correttamente i dati"));
 } else if (!isNaN(pariDispari))
-console.log("Devi scegliere tra pari e dispari");
+  location.reload(alert("Non hai inserito correttamente i dati"));
 
 // Stampo il numero scelto
 document.getElementById('number').innerHTML = "Il numero da te scelto è: " + numero;
