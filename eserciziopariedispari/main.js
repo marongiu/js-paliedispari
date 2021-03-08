@@ -14,12 +14,14 @@ if (numero % 2 == 0) {
   document.getElementById('choice').innerHTML = "La tua scelta è dispari";
 }
 
-
-// Creo un if per essere sicuri che l'utente ci dia un numero e una parola
+// Creo un if per essere sicuri che l'utente ci dia un numero e una parola e un numero tra 1 e 5
 if (isNaN(numero)) {
-    location.reload(alert("Non hai inserito correttamente i dati"));
-} else if (!isNaN(pariDispari))
   location.reload(alert("Non hai inserito correttamente i dati"));
+} else if (!isNaN(pariDispari)) {
+  location.reload(alert("Non hai inserito correttamente i dati"));
+} else if (numero > 5 || numero < 1) {
+  location.reload(alert("Non hai inserito correttamente i dati"));
+}
 
 // Stampo il numero scelto
 document.getElementById('number').innerHTML = "Il numero da te scelto è: " + numero;
