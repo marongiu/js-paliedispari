@@ -11,16 +11,16 @@ var pariDispari = prompt("Scegli tra pari o dispari:");
 // Imposto la scrittura in minuscolo
 pariDispari = pariDispari.toLowerCase();
 
-console.log(pariDispari);
 
 var numero = parseInt(prompt("Scegli un numero tra 1 e 5:"));
 
 // Stampo la scelta dell'utente
-if (numero % 2 == 0) {
+if (pariDispari == "pari") {
   document.getElementById('choice').innerHTML = "La tua scelta è pari";
-} else {
+} else if (pariDispari == "dispari") {
   document.getElementById('choice').innerHTML = "La tua scelta è dispari";
 }
+
 
 // Condizioni da rispettare
 if (isNaN(numero)) {
